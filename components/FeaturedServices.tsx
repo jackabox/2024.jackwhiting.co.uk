@@ -25,6 +25,7 @@ export default function FeaturedServices({ heading, summary, services }: any) {
 						return (
 							<ServiceAccordion
 								id={index + 1}
+								key={index}
 								{...service}
 								currentActive={active}
 								setAccordionActive={setAccordionActive}

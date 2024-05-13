@@ -24,7 +24,7 @@ export default function FeaturedProjects({ heading, summary, projects }: any) {
 				<div className="hidden lg:block lg:col-span-5">
 					{projects.map((project: any, index: number) => {
 						return (
-							<div className="relative">
+							<div className="relative" key={index}>
 								<AnimatePresence>
 									{project.image.length && active == index && (
 										<div className="absolute top-0 left-0 right-0 shadow-2xl overflow-hidden">
@@ -66,6 +66,7 @@ export default function FeaturedProjects({ heading, summary, projects }: any) {
 					{projects.map((project: any, index: number) => {
 						return (
 							<ProjectRow
+								key={index}
 								id={index}
 								{...project}
 								currentActive={active}
