@@ -1,5 +1,5 @@
 export const getApiQuery = async (query, variables = {}) => {
-  const res = await fetch('http://jw24-cms.test/api', {
+  const res = await fetch(process.env.NEXT_PUBLIC_GRAPHQL_API_URL, {
     method: "POST",
     body: JSON.stringify({
       query,
