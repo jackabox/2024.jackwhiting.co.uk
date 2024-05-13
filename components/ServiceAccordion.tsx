@@ -25,11 +25,11 @@ export default function ServiceAccordion({
 	}
 
 	return (
-		<div className="block mb-14 pb-14 relative group">
+		<div className="block mb-14 pb-14 relative ">
 			<div className="flex justify-between items-center">
 				<button
 					type="button"
-					className="flex items-center justify-between gap-2 w-full"
+					className="group flex items-center justify-between gap-2 w-full"
 					onClick={() => handleClick()}
 				>
 					<h3 className="h4 font-normal transition-all duration-300 group-hover:text-blue">
@@ -37,7 +37,7 @@ export default function ServiceAccordion({
 					</h3>
 
 					<span className="duration-500 group-hover:text-blue">
-						{visible ? (
+						{!visible ? (
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 24 24"
@@ -88,7 +88,7 @@ export default function ServiceAccordion({
 						transition={{ duration: 0.5 }}
 					>
 						<div
-							className="rte pt-8 -mb-2 max-w-[560px]"
+							className="rte pt-8 -mb-2 max-w-[580px]"
 							dangerouslySetInnerHTML={{ __html: summary }}
 						/>
 					</motion.div>

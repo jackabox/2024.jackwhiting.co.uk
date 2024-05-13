@@ -51,6 +51,11 @@
 	}
 }
 
+b,
+strong {
+	@apply font-semibold;
+}
+
 .rte > * + * {
 	@apply mt-4;
 }
@@ -58,4 +63,8 @@
 .rte > * + h3,
 .rte > * + h4 {
 	@apply mt-6;
+}
+
+.rte a {
+	@apply text-blue;
 }

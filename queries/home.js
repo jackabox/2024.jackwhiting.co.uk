@@ -10,6 +10,28 @@ query HomeQuery {
           heading
         }
       }
+      featuredProjects {
+        ... on featuredProjects_Entry {
+          heading
+          summary
+          projects {
+            ... on project_Entry {
+              title
+              projectDate
+              url
+              image {
+                url
+                width
+                height
+                alt
+              }
+              projectType {
+                title
+              }
+            }
+          }
+        }
+      }
       featuredServices {
         ... on featuredServices_Entry {
           heading
