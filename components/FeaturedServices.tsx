@@ -5,7 +5,7 @@ import { useState } from "react"
 import ServiceAccordion from "./ServiceAccordion"
 
 export default function FeaturedServices({ heading, summary, services }: any) {
-	const [active, setActive] = useState(null)
+	const [active, setActive] = useState(1)
 
 	const setAccordionActive = (data: any) => {
 		setActive(data)
@@ -19,10 +19,8 @@ export default function FeaturedServices({ heading, summary, services }: any) {
 				dangerouslySetInnerHTML={{ __html: summary }}
 			/>
 
-			<div className="grid grid-cols-12 gap-20 mt-20">
-				<div className="col-span-5"></div>
-
-				<div className="col-span-7">
+			<div className="grid grid-cols-12 lg:gap-20 mt-20">
+				<div className="col-span-12">
 					{services.map((service: any, index: number) => {
 						return (
 							<ServiceAccordion

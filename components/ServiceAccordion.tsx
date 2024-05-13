@@ -26,17 +26,13 @@ export default function ServiceAccordion({
 
 	return (
 		<div className="block mb-14 pb-14 relative ">
-			<div className="flex justify-between items-center">
+			<div className="flex items-start justify-between">
 				<button
 					type="button"
-					className="group flex items-center justify-between gap-2 w-full"
+					className="group flex items-center w-1/2 gap-6"
 					onClick={() => handleClick()}
 				>
-					<h3 className="h4 font-normal transition-all duration-300 group-hover:text-blue">
-						{title}
-					</h3>
-
-					<span className="duration-500 group-hover:text-blue">
+					<span className="duration-500 group-hover:text-blue -mt-0.5">
 						{!visible ? (
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -72,29 +68,32 @@ export default function ServiceAccordion({
 							</svg>
 						)}
 					</span>
+
+					<h3 className="h4 font-normal transition-all duration-300 group-hover:text-blue w-auto">
+						{title}
+					</h3>
 				</button>
+
+				<AnimatePresence initial={false}>
+					{visible && (
+						<motion.div
+							initial="collapsed"
+							animate="open"
+							exit="collapsed"
+							variants={{
+								open: { opacity: 1, height: "auto" },
+								collapsed: { opacity: 0, height: 0 },
+							}}
+							transition={{ duration: 0.5 }}
+						>
+							<div
+								className="rte max-w-[580px]"
+								dangerouslySetInnerHTML={{ __html: summary }}
+							/>
+						</motion.div>
+					)}
+				</AnimatePresence>
 			</div>
-
-			<AnimatePresence initial={false}>
-				{visible && (
-					<motion.div
-						initial="collapsed"
-						animate="open"
-						exit="collapsed"
-						variants={{
-							open: { opacity: 1, height: "auto" },
-							collapsed: { opacity: 0, height: 0 },
-						}}
-						transition={{ duration: 0.5 }}
-					>
-						<div
-							className="rte pt-8 -mb-2 max-w-[580px]"
-							dangerouslySetInnerHTML={{ __html: summary }}
-						/>
-					</motion.div>
-				)}
-			</AnimatePresence>
-
 			<span className="absolute w-full h-[2px] bottom-0 left-0 bg-black/10" />
 		</div>
 	)

@@ -1,6 +1,6 @@
 export default function HomeIntro({ multilineHeading, heading, rte }: any) {
 	return (
-		<section className="py-14 lg:py-24">
+		<section className="py-24 lg:pb-32">
 			<h1
 				className="leading-tight font-normal"
 				dangerouslySetInnerHTML={{

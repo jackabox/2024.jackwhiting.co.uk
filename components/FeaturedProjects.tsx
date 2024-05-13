@@ -20,8 +20,8 @@ export default function FeaturedProjects({ heading, summary, projects }: any) {
 				dangerouslySetInnerHTML={{ __html: summary }}
 			/>
 
-			<div className="grid grid-cols-12 gap-32 mt-20">
-				<div className="col-span-5">
+			<div className="grid grid-cols-12 lg:gap-32 mt-20">
+				<div className="hidden lg:block lg:col-span-5">
 					{projects.map((project: any, index: number) => {
 						return (
 							<div className="relative">
@@ -62,7 +62,7 @@ export default function FeaturedProjects({ heading, summary, projects }: any) {
 					})}
 				</div>
 
-				<div className="col-span-7">
+				<div className="col-span-12 lg:col-span-7">
 					{projects.map((project: any, index: number) => {
 						return (
 							<ProjectRow

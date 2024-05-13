@@ -17,9 +17,9 @@ query HomeQuery {
           projects {
             ... on project_Entry {
               title
-              projectDate
+              projectDate @formatDateTime (format: "Y")
               url
-              image {
+              image(limit: 1) {
                 url
                 width
                 height
@@ -44,7 +44,25 @@ query HomeQuery {
           }
         }
       }
+      featuredArticles {
+        ... on featuredArticles_Entry {
+          heading
+          summary
+          articles {
+            ... on article_Entry {
+              title
+              excerpt
+              url
+              topics {
+                title
+              }
+              dateCreated @formatDateTime (format: "Y/m/d")
+            }
+          }
+        }
+      }
     }
   }
 }
+
 `

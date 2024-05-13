@@ -31,12 +31,14 @@
 	}
 
 	p,
-	.p {
+	.p,
+	.rte {
 		line-height: 1.5;
 		font-size: clamp(0.9375rem, 0.9023rem + 0.1563vw, 1.0625rem);
 	}
 
 	.large,
+	.rte--large,
 	.rte--large p,
 	.rte--large li {
 		font-size: clamp(1rem, 0.9648rem + 0.1563vw, 1.125rem);
