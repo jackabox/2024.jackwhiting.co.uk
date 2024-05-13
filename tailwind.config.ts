@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
@@ -27,16 +27,19 @@ const config: Config = {
         sans: ["var(--font-NeueHaas)", "sans-serif"],
       },
       colors: {
-        blue: '#043BFF',
-        black: '#1C1C1C',
+        blue: "#043BFF",
+        black: {
+          DEFAULT: "#1C1C1C",
+          700: "#555",
+        },
         grey: {
-          500: '#E4E4E4',
-          400: '#F8F8F8'
-        }
-      }
+          500: "#E4E4E4",
+          400: "#F8F8F8",
+        },
+      },
     },
   },
   plugins: [],
-};
+}
 
-export default config;
+export default config

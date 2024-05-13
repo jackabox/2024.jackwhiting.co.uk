@@ -17,8 +17,8 @@ query HomeQuery {
           projects {
             ... on project_Entry {
               title
-              projectDate @formatDateTime (format: "Y")
               url
+              video
               image(limit: 1) {
                 url
                 width

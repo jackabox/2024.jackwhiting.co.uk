@@ -64,7 +64,7 @@ export default function ProjectRow({
 							return (
 								<span
 									key={index}
-									className="flex text-xs font-mono uppercase font-semibold px-2 py-1 rounded-sm border-2 border-black opacity-30"
+									className="flex text-sm font-mono uppercase font-regular px-2 py-1 rounded-md border border-black opacity-50"
 								>
 									{type.title}
 								</span>

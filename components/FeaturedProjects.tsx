@@ -4,6 +4,23 @@ import Image from "next/image"
 import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import ProjectRow from "@/components/Projects/ProjectRow"
+import ReactPlayer from "react-player/vimeo"
+
+function VideoComponent({ url }: any) {
+	return (
+		<div className="rounded-lg overflow-hidden iframe-square h-full">
+			<ReactPlayer
+				width="100%"
+				height="100%"
+				muted
+				playsinline
+				loop
+				playing
+				url={url}
+			/>
+		</div>
+	)
+}
 
 export default function FeaturedProjects({ heading, summary, projects }: any) {
 	const [active, setActive] = useState(null)
@@ -20,8 +37,8 @@ export default function FeaturedProjects({ heading, summary, projects }: any) {
 				dangerouslySetInnerHTML={{ __html: summary }}
 			/>
 
-			<div className="grid grid-cols-12 lg:gap-32 mt-20">
-				<div className="hidden lg:block lg:col-span-5">
+			<div className="grid grid-cols-12 lg:gap-28 mt-20">
+				<div className="hidden lg:block lg:col-span-6">
 					{projects.map((project: any, index: number) => {
 						return (
 							<div className="relative" key={index}>
@@ -42,17 +59,23 @@ export default function FeaturedProjects({ heading, summary, projects }: any) {
 													animated: {
 														scale: 1,
 														transition: {
-															duration: 1.2,
+															duration: 1,
 														},
 													},
 												}}
 											>
-												<Image
-													src={project.image[0].url}
-													width={project.image[0].width}
-													height={project.image[0].height}
-													alt={project.image[0].alt ?? ""}
-												/>
+												<div className="p-16 bg-blue aspect-[9/8]">
+													{project.video ? (
+														<VideoComponent url={project.video} />
+													) : (
+														<Image
+															src={project.image[0].url}
+															width={project.image[0].width}
+															height={project.image[0].height}
+															alt={project.image[0].alt}
+														/>
+													)}
+												</div>
 											</motion.div>
 										</div>
 									)}
@@ -62,7 +85,7 @@ export default function FeaturedProjects({ heading, summary, projects }: any) {
 					})}
 				</div>
 
-				<div className="col-span-12 lg:col-span-7">
+				<div className="col-span-12 lg:col-span-6">
 					{projects.map((project: any, index: number) => {
 						return (
 							<ProjectRow

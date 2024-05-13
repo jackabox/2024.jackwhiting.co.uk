@@ -87,7 +87,7 @@ export default function ServiceAccordion({
 							transition={{ duration: 0.5 }}
 						>
 							<div
-								className="rte max-w-[580px]"
+								className="rte rte--large max-w-[580px]"
 								dangerouslySetInnerHTML={{ __html: summary }}
 							/>
 						</motion.div>
