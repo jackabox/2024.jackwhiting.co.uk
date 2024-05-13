@@ -12,7 +12,7 @@ export default function Footer() {
 						href="#"
 						className="inline-block relative text-[82px] font-bold text-blue group"
 					>
-						Lets Jam Together.
+						Let&apos;s Jam Together.
 						<span className="absolute w-full h-[2px] bottom-0 left-0 bg-black/10"></span>
 						<span className="w-[0px] transition-all duration-300 group-hover:opacity-100 group-hover:w-full absolute h-[2px] bottom-0 left-0 bg-blue"></span>
 					</a>
