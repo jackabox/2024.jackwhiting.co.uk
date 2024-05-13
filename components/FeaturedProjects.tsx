@@ -42,11 +42,10 @@ export default function FeaturedProjects({ heading, summary, projects }: any) {
 													animated: {
 														scale: 1,
 														transition: {
-															duration: 1.5,
+															duration: 1.2,
 														},
 													},
 												}}
-												transition={{ duration: 0.8 }}
 											>
 												<Image
 													src={project.image[0].url}
