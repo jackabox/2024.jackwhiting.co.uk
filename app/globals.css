@@ -64,7 +64,7 @@ strong {
 }
 
 .rte > * + * {
-	@apply mt-4;
+	@apply mt-6;
 }
 
 .rte > * + h3,
@@ -78,4 +78,32 @@ strong {
 
 .iframe-square iframe {
 	@apply object-cover !w-full !h-full;
+}
+
+.rte--blog {
+	ul,
+	ol {
+		@apply ml-10;
+		list-style: disc;
+
+		> li {
+			@apply mb-2;
+		}
+	}
+
+	> * + h1,
+	> * + h2,
+	> * + h3,
+	> * + h4,
+	> * + h5 {
+		@apply pt-12 mt-12 border-t-2 border-grey-500;
+	}
+
+	pre {
+		@apply bg-grey-500 font-mono text-sm;
+	}
+}
+
+a.ck-anchor {
+	@apply text-black-700;
 }

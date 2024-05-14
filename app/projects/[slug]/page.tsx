@@ -1,6 +1,7 @@
 import { getApiQuery } from "@/utils/getApiQuery.js"
 import { SINGLE_PROJECT_QUERY } from "@/queries/projects"
 import FullVideo from "@/components/Projects/FullVideo"
+import SimpleButton from "@/components/SimpleButton"
 
 async function getData(params: any) {
   const { projectsEntries } = await getApiQuery(SINGLE_PROJECT_QUERY, params)
@@ -69,16 +70,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
             dangerouslySetInnerHTML={{ __html: overview }}
           />
 
-          <a
-            href={websiteUrl}
-            target="_blank"
+          <SimpleButton
+            url={websiteUrl}
             title="Visit website for this project"
-            className="group inline-flex tracking-wider text-sm mt-10 pb-2 font-mono uppercase border-black-700 transition-all duration-500 text-blue relative"
-          >
-            Visit Website
-            <span className="absolute h-[2px] left-0 bottom-0 right-0 bg-grey-500"></span>
-            <span className="absolute h-[2px] left-0 bottom-0 right-0 bg-blue w-0 group-hover:w-full transition-all duration-500"></span>
-          </a>
+            text="Visit Website"
+            className="mt-10"
+          />
         </div>
 
         <div className="w-1/3 grid grid-cols-2 gap-20">

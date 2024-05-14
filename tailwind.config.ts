@@ -30,7 +30,7 @@ const config: Config = {
         blue: "#043BFF",
         black: {
           DEFAULT: "#1C1C1C",
-          700: "#555",
+          700: "#333",
         },
         grey: {
           500: "#E4E4E4",

@@ -26,10 +26,10 @@ export default function ServiceAccordion({
 
 	return (
 		<div className="block mb-14 pb-14 relative ">
-			<div className="flex items-start justify-between">
+			<div className="flex items-start">
 				<button
 					type="button"
-					className="group flex items-center w-1/2 gap-6"
+					className="group flex items-center w-full gap-6"
 					onClick={() => handleClick()}
 				>
 					<span className="duration-500 group-hover:text-blue -mt-0.5">
@@ -80,6 +80,7 @@ export default function ServiceAccordion({
 							initial="collapsed"
 							animate="open"
 							exit="collapsed"
+							className="flex-shrink-0"
 							variants={{
 								open: { opacity: 1, height: "auto" },
 								collapsed: { opacity: 0, height: 0 },
@@ -87,7 +88,7 @@ export default function ServiceAccordion({
 							transition={{ duration: 0.5 }}
 						>
 							<div
-								className="rte rte--large max-w-[580px]"
+								className="rte rte--large w-full max-w-[580px]"
 								dangerouslySetInnerHTML={{ __html: summary }}
 							/>
 						</motion.div>
