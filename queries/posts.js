@@ -12,3 +12,32 @@ export const SINGLE_POST_QUERY = `
     }
   }
 `
+
+export const ALL_POSTS_QUERY = `
+  query AllArticles {
+    articlesEntries {
+      ... on article_Entry {
+        id
+      }
+    }
+  }
+`
+
+/**
+ * requires $offset Integer param.
+ */
+export const PAGINATED_POSTS_QUERY = `
+  query PaginatedArticles($offset: Int) {
+    articlesEntries(offset: $offset, limit: 2) {
+      ... on article_Entry {
+        title
+        excerpt
+        url
+        topics {
+          title
+        }
+        dateCreated @formatDateTime (format: "Y/m/d")
+      }
+    }
+  }
+`
