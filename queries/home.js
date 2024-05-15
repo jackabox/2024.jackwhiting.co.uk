@@ -56,7 +56,7 @@ query HomeQuery {
               topics {
                 title
               }
-              dateCreated @formatDateTime (format: "Y/m/d")
+              postDate @formatDateTime (format: "Y/m/d")
             }
           }
         }

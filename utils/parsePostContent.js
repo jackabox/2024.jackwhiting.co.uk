@@ -3,10 +3,11 @@ import rehypeParse from "rehype-parse"
 import rehypeStringify from "rehype-stringify"
 import { visit } from "unist-util-visit"
 import parameterize from "parameterize"
+import rehypeShiki from "@shikijs/rehype"
 
-export const parsePostContent = (data) => {
+export const parsePostContent = async (data) => {
 	const toc = []
-	const content = unified()
+	let content = await unified()
 		.use(rehypeParse, {
 			fragment: true,
 		})
@@ -25,12 +26,14 @@ export const parsePostContent = (data) => {
 				})
 			}
 		})
+		.use(rehypeShiki, {
+			theme: "catppuccin-latte",
+		})
 		.use(rehypeStringify)
-		.processSync(data)
-		.toString()
+		.process(data)
 
 	return {
 		toc: toc,
-		content: content,
+		content: content.value,
 	}
 }

@@ -5,7 +5,7 @@ export default function ArticleFeaturedCard({
 	title,
 	url,
 	excerpt,
-	dateCreated,
+	postDate,
 }: any) {
 	return (
 		<Link
@@ -14,7 +14,7 @@ export default function ArticleFeaturedCard({
 		>
 			<div className="flex flex-col h-full">
 				<p className="mb-4 uppercase font-mono text-semibold tracking-wider small text-black/40">
-					{dateCreated}
+					{postDate}
 				</p>
 
 				<h3 className="font-normal transition-all duration-300 mb-6 max-w-[70%] group-hover:text-blue">

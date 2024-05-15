@@ -52,7 +52,7 @@ export default function Header() {
 							5
 						</pre>
 					</NavigationItem>
-					<NavigationItem href="blog" title="Articles" />
+					<NavigationItem href="posts" title="Articles" />
 					<NavigationItem href="contact" title="Contact" />
 				</nav>
 			</div>

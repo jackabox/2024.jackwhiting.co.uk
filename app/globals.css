@@ -108,6 +108,6 @@ strong {
 	}
 }
 
-a.ck-anchor {
-	@apply text-black-700;
+.shiki {
+	@apply p-6;
 }

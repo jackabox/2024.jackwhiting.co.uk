@@ -28,7 +28,7 @@ export const ALL_POSTS_QUERY = `
  */
 export const PAGINATED_POSTS_QUERY = `
   query PaginatedArticles($offset: Int) {
-    articlesEntries(offset: $offset, limit: 2) {
+    articlesEntries(orderBy: "postDate desc", offset: $offset, limit: 12) {
       ... on article_Entry {
         title
         excerpt
@@ -36,7 +36,7 @@ export const PAGINATED_POSTS_QUERY = `
         topics {
           title
         }
-        dateCreated @formatDateTime (format: "Y/m/d")
+        postDate @formatDateTime (format: "Y/m/d")
       }
     }
   }
