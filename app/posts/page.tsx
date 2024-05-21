@@ -26,7 +26,7 @@ const Page = async ({ searchParams }: { searchParams: { page: any } }) => {
         <h1 className="leading-tight font-normal">Articles &amp; Tutorials</h1>
       </section>
 
-      <section className="container grid grid-cols-3 gap-10 sm:gap-14 sm:gap-20 lg:gap-28">
+      <section className="container grid grid-cols-3 gap-10 sm:gap-14 md:gap-20 lg:gap-28">
         {articlesEntries.map((article: any, index: number) => {
           return <ArticleRow key={index} {...article} />
         })}

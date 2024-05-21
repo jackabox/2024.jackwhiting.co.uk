@@ -1,9 +1,9 @@
-import { getApiQuery } from "@/utils/getApiQuery.js"
+import ProjectFullRow from "@/components/Projects/ProjectFullRow"
 import {
   ALL_PROJECTS_QUERY,
   PAGINATED_PROJECTS_QUERY,
 } from "@/queries/projects"
-import ProjectFullRow from "@/components/Projects/ProjectFullRow"
+import { getApiQuery } from "@/utils/getApiQuery.js"
 
 async function getData(params: any) {
   const { projectsEntries: total } = await getApiQuery(ALL_PROJECTS_QUERY)
