@@ -1,12 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-
 import Link from "next/link"
+import { useEffect, useState } from "react"
 import NavigationItem from "./NavigationItem"
 
-export default function Header() {
+export default function Header({ totalProjects }: any) {
   const [prevScrollpos, setPrevScrollpos] = useState(0)
   const [padding, setPadding] = useState(4)
 
@@ -49,7 +48,7 @@ export default function Header() {
           <NavigationItem href="about" title="About" />
           <NavigationItem href="projects" title="Projects">
             <pre className="absolute text-sm text-black/30 font-semibold -right-3 -top-2">
-              5
+              {totalProjects}
             </pre>
           </NavigationItem>
           <NavigationItem href="posts" title="Articles" />
