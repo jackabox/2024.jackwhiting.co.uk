@@ -28,8 +28,10 @@ const Page = async ({ searchParams }: { searchParams: { page: any } }) => {
 
   return (
     <>
-      <section className="py-24 lg:pb-32 container">
-        <h1 className="leading-tight font-normal">Projects</h1>
+      <section className="py-24 lg:pb-48 container">
+        <h1 className="leading-tight font-normal text-center">
+          Featured Projects
+        </h1>
       </section>
 
       <section className="container">

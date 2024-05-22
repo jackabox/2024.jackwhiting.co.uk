@@ -12,6 +12,12 @@ const Page = async () => {
 
   return (
     <>
+      <section className="py-24 lg:pb-48 container">
+        <h1 className="leading-tight font-normal text-center">
+          Behind the Keyboard
+        </h1>
+      </section>
+
       <div className="grid grid-cols-2 gap-48 container py-24">
         <Image src="/me.jpg" alt="Picture of Jack" width="800" height="900" />
 
