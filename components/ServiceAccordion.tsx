@@ -42,9 +42,9 @@ export default function ServiceAccordion({
 								className="main-grid-item-icon"
 								fill="none"
 								stroke="currentColor"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth="2"
 								v-if="!showDescription"
 							>
 								<line x1="12" x2="12" y1="5" y2="19" />
@@ -59,9 +59,9 @@ export default function ServiceAccordion({
 								className="main-grid-item-icon"
 								fill="none"
 								stroke="currentColor"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth="2"
 								v-else="showDescription"
 							>
 								<line x1="5" x2="19" y1="12" y2="12" />

@@ -1,14 +1,16 @@
+import FeaturedServices from "@/components/FeaturedServices"
 import { getApiQuery } from "@/utils/getApiQuery"
+import { ABOUT_QUERY } from "@/queries/about.js"
 import Image from "next/image"
 
 async function getData() {
-  const data = await getApiQuery()
+  const { aboutEntries } = await getApiQuery(ABOUT_QUERY, {})
 
-  return data
+  return aboutEntries[0]
 }
 
 const Page = async () => {
-  const data = await getData()
+  const { featuredServices } = await getData()
 
   return (
     <>
@@ -18,17 +20,21 @@ const Page = async () => {
         </h1>
       </section>
 
-      <div className="grid grid-cols-2 gap-48 container py-24">
-        <Image src="/me.jpg" alt="Picture of Jack" width="800" height="900" />
+      <div className="container">
+        <section className="grid grid-cols-2 gap-48 py-24 lg:py-36">
+          <Image src="/me.jpg" alt="Picture of Jack" width="800" height="900" />
 
-        <div className="pt-6 max-w-[600px]">
-          <h2 className="mb-6">I'm Jack</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam earum
-            nihil repudiandae vitae provident. Saepe laborum, aliquid ratione
-            veniam distinctio!
-          </p>
-        </div>
+          <div className="pt-6 max-w-[600px]">
+            <h2 className="mb-6">I'm Jack</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
+              earum nihil repudiandae vitae provident. Saepe laborum, aliquid
+              ratione veniam distinctio!
+            </p>
+          </div>
+        </section>
+
+        <FeaturedServices {...featuredServices[0]} showBorderBottom={false} />
       </div>
     </>
   )

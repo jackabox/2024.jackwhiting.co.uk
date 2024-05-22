@@ -4,7 +4,12 @@ import { useState } from "react"
 
 import ServiceAccordion from "./ServiceAccordion"
 
-export default function FeaturedServices({ heading, summary, services }: any) {
+export default function FeaturedServices({
+	heading,
+	summary,
+	services,
+	showBorderBottom = true,
+}: any) {
 	const [active, setActive] = useState(1)
 
 	const setAccordionActive = (data: any) => {
@@ -12,8 +17,11 @@ export default function FeaturedServices({ heading, summary, services }: any) {
 	}
 
 	return (
-		<section className="border-y-2 border-grey-500 py-24 lg:py-36 -mt-0.5">
+		<section
+			className={`border-t-2 border-grey-500 pt-24 lg:pt-36 -mt-0.5 ${showBorderBottom ? "border-b-2 pb-24 lg:pb-36" : ""}`}
+		>
 			<h2 className="text-4xl font-normal mb-6">{heading}</h2>
+
 			<div
 				className="rte rte--large max-w-[400px]"
 				dangerouslySetInnerHTML={{ __html: summary }}
