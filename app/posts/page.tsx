@@ -1,6 +1,6 @@
 import { getApiQuery } from "@/utils/getApiQuery.js"
 import { ALL_POSTS_QUERY, PAGINATED_POSTS_QUERY } from "@/queries/posts"
-import ArticleRow from "@/components/Articles/ArticleRow"
+import ArticleFeaturedCard from "@/components/Articles/ArticleFeaturedCard"
 
 async function getData(params: any) {
   const { articlesEntries: total } = await getApiQuery(ALL_POSTS_QUERY)
@@ -28,9 +28,9 @@ const Page = async ({ searchParams }: { searchParams: { page: any } }) => {
         </h1>
       </section>
 
-      <section className="container grid grid-cols-3 gap-10 sm:gap-14 md:gap-20 lg:gap-28">
+      <section className="container max-w-[768px] space-y-10 md:space-y-14 lg:space-y-20 divide-y-2 divide-grey-500 pb-12">
         {articlesEntries.map((article: any, index: number) => {
-          return <ArticleRow key={index} {...article} />
+          return <ArticleFeaturedCard key={index} {...article} />
         })}
       </section>
     </>

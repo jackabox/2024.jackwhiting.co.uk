@@ -8,16 +8,13 @@ export default function ArticleFeaturedCard({
 	postDate,
 }: any) {
 	return (
-		<Link
-			href={url}
-			className="col-span-12 sm:col-span-6 lg:col-span-3 block relative group pb-12 sm:pb-0 sm:mb-0 border-b-2 border-grey-500 last:border-0 last:pb-0 sm:border-0"
-		>
+		<Link href={url} className="block relative group pt-8 lg:pt-16">
 			<div className="flex flex-col h-full">
 				<p className="mb-4 uppercase font-mono text-semibold tracking-wider small text-black/40">
 					{postDate}
 				</p>
 
-				<h3 className="font-normal transition-all duration-300 mb-6 max-w-[70%] group-hover:text-blue">
+				<h3 className="font-normal transition-all duration-300 mb-6 group-hover:text-blue">
 					{title}
 				</h3>
 

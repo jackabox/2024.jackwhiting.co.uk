@@ -45,14 +45,14 @@ export default function Header({ totalProjects }: any) {
         </Link>
 
         <nav className="flex gap-12">
-          <NavigationItem href="about" title="About" />
-          <NavigationItem href="projects" title="Projects">
+          <NavigationItem href="/about" title="About" />
+          <NavigationItem href="/projects" title="Projects">
             <pre className="absolute text-sm text-black/30 font-semibold -right-3 -top-2">
               {totalProjects}
             </pre>
           </NavigationItem>
-          <NavigationItem href="posts" title="Articles" />
-          <NavigationItem href="contact" title="Contact" />
+          <NavigationItem href="/posts" title="Articles" />
+          <NavigationItem href="/contact" title="Contact" />
         </nav>
       </div>
     </motion.header>

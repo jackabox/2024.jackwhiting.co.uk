@@ -18,14 +18,16 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <section className="container py-24 lg:pb-32">
+      <section className="container py-24 lg:pb-48 text-center">
         <p className="mb-8 uppercase font-mono text-semibold tracking-wider  text-black/40">
           {dateCreated}
         </p>
 
-        <h1 className="leading-tight font-normal h1 max-w-[1300px]">{title}</h1>
+        <h1 className="leading-tight font-normal h1 max-w-[1300px] mx-auto">
+          {title}
+        </h1>
 
-        <div className="mt-10 flex gap-4 flex-wrap">
+        <div className="mt-10 flex gap-4 flex-wrap justify-center">
           {topics.map((topic: any, index: number) => {
             return <Tag key={index} {...topic} />
           })}
