@@ -31,14 +31,14 @@ export default function ProjectFullRow({
 	video,
 }: any) {
 	return (
-		<Link href={url} className="group  even:mt-48">
+		<Link href={url} className="group">
 			<AnimatePresence>
 				{image.length && (
-					<div className="shadow-2xl overflow-hidden">
+					<div className="shadow-2xl overflow-hidden aspect-[9/8] relative">
 						<motion.div
 							initial="initial"
-							animate="animated"
-							exit="initial"
+							whileInView="animated"
+							viewport={{ once: true }}
 							variants={{
 								initial: {
 									scale: 1.15,
@@ -54,19 +54,17 @@ export default function ProjectFullRow({
 								},
 							}}
 						>
-							<div className="p-16 bg-blue aspect-[9/8]">
-								{video ? (
-									<VideoComponent url={video} />
-								) : (
-									<Image
-										src={image[0].url}
-										width={image[0].width}
-										height={image[0].height}
-										alt={image[0].alt}
-									/>
-								)}
-							</div>
+							<Image
+								src={image[0].url}
+								width={image[0].width}
+								height={image[0].height}
+								alt={image[0].alt}
+							/>
 						</motion.div>
+
+						<div className="absolute inset-0 bg-transparent border-[16px] border-black group-hover:border-blue duration-500">
+							&nbsp;
+						</div>
 					</div>
 				)}
 			</AnimatePresence>
