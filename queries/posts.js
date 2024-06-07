@@ -19,6 +19,12 @@ export const SINGLE_POST_QUERY = `
 export const ALL_POSTS_QUERY = `
   query AllArticles {
     totalArticles: entryCount(section: "articles")
+    blogEntries {
+      ... on blog_Entry {
+        title
+        ${seomatic}
+      }
+    }
   }
 `
 

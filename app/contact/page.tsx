@@ -1,50 +1,66 @@
+import { SeoMatic, getMetadata } from "next-seomatic"
+
 import LinkUnderlineStyle from "@/components/LinkUnderlineStyle"
 import { getApiQuery } from "@/utils/getApiQuery"
+import { CONTACT_PAGE_QUERY } from "@/queries/contact"
 
 async function getData() {
-  const data = await getApiQuery()
+  const { contactEntries } = await getApiQuery(CONTACT_PAGE_QUERY)
 
-  return data
+  return contactEntries[0]
+}
+
+// Meta Data
+export async function generateMetadata() {
+  const { seomatic } = await getData()
+
+  return getMetadata(seomatic)
 }
 
 const Page = async () => {
-  const data = await getData()
+  const { title, rte, email, mastodon, twitter, seomatic } = await getData()
 
   return (
     <>
       <section className="py-24 lg:pb-48 container">
-        <p className="h4 sm:h3 max-w-[768px] mb-10">
-          I don't like long forms, as they become a bit of a chore - so why not
-          send me an old-school email with what you want to to talk about.
-          Whether that's development tasks, a funny anecdote, or an{" "}
-          <b className="font-semibold">exciting new project</b>? Or, hit me up
-          on socials.
-        </p>
+        <div
+          className="rte max-w-[768px] mb-10 rte--xl"
+          dangerouslySetInnerHTML={{ __html: rte }}
+        ></div>
 
         <LinkUnderlineStyle
           title="Email Jack!"
-          href="mailto:hi@jackwhiting.co.uk"
-          text="hi@jackwhiting.co.uk"
+          href={`mailto:${email}`}
+          text={email}
           className="h3 sm:h1 !text-blue"
           color="blue"
         />
 
         <div className="flex flex-wrap gap-16 mt-8 sm:mt-16">
-          <LinkUnderlineStyle
-            title="Link to Jack's Mastodon"
-            href="https://mas.to/jackabox"
-            text="Mastodon"
-            className="h4"
-          />
+          {mastodon && (
+            <LinkUnderlineStyle
+              title="Link to Jack's Mastodon"
+              href={mastodon}
+              text="Mastodon"
+              className="h4"
+            />
+          )}
 
-          <LinkUnderlineStyle
-            title="Link to Jack's Mastadon"
-            href="https://twitter.com/jackabox"
-            text="Twitter / X"
-            className="h4"
-          />
+          {twitter && (
+            <LinkUnderlineStyle
+              title="Link to Jack's Mastadon"
+              href={twitter}
+              text="Twitter / X"
+              className="h4"
+            />
+          )}
         </div>
       </section>
+
+      <SeoMatic
+        metaJsonLdContainer={seomatic.metaJsonLdContainer}
+        metaScriptContainer={seomatic.metaScriptContainer}
+      />
     </>
   )
 }
