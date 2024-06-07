@@ -42,7 +42,7 @@ const PostsPage = async ({ searchParams }: { searchParams: { page: any } }) => {
       </section>
 
       {/* Loop around our articles */}
-      <section className="container max-w-[768px] space-y-10 md:space-y-14 lg:space-y-20 divide-y-2 divide-grey-500 pb-12">
+      <section className="container max-w-[768px] space-y-10 md:space-y-14 lg:space-y-20 divide-y-2 divide-grey-500 pb-12 -mt-8 lg:-mt-16">
         {articlesEntries.map((article: any, index: number) => {
           return <ArticleFeaturedCard key={index} {...article} />
         })}

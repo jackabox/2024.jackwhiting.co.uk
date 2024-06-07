@@ -46,7 +46,6 @@ export const PAGINATED_PROJECTS_QUERY = `
         date
         url
         video
-        summary
         image(limit: 1) {
           url
           width

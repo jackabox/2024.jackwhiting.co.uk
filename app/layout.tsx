@@ -13,10 +13,11 @@ export const metadata: Metadata = {
 }
 
 async function getData() {
-  const { totalProjects } = await getApiQuery(GLOBAL_QUERY, {})
+  const { totalProjects, footer } = await getApiQuery(GLOBAL_QUERY, {})
 
   return {
     totalProjects,
+    footer,
   }
 }
 
@@ -25,7 +26,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const { totalProjects } = await getData()
+  const { totalProjects, footer } = await getData()
 
   return (
     <html lang="en">
@@ -35,7 +36,7 @@ export default async function RootLayout({
         <main className="flex-grow flex flex-col pt-[161px]">
           <Header totalProjects={totalProjects} />
           {children}
-          <Footer />
+          <Footer {...footer} />
         </main>
       </body>
     </html>
