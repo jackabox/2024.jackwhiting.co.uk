@@ -1,4 +1,4 @@
-import { featuredServices } from "./shared"
+import { featuredServices, seomatic } from "./shared"
 
 export const ABOUT_QUERY = `
   query AboutQuery {
@@ -18,6 +18,7 @@ export const ABOUT_QUERY = `
         }
         }
         ${featuredServices}
+        ${seomatic}
       }
     }
   }

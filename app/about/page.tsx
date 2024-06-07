@@ -2,6 +2,7 @@ import FeaturedServices from "@/components/FeaturedServices"
 import { getApiQuery } from "@/utils/getApiQuery"
 import { ABOUT_QUERY } from "@/queries/about.js"
 import AboutInfo from "@/components/About/AboutInfo"
+import { SeoMatic, getMetadata } from "next-seomatic"
 
 async function getData() {
   const { aboutEntries } = await getApiQuery(ABOUT_QUERY, {})
@@ -9,8 +10,15 @@ async function getData() {
   return aboutEntries[0]
 }
 
+// Meta Data
+export async function generateMetadata() {
+  const { seomatic } = await getData()
+
+  return getMetadata(seomatic)
+}
+
 const Page = async () => {
-  const { title, aboutInfo, featuredServices } = await getData()
+  const { title, aboutInfo, featuredServices, seomatic } = await getData()
 
   return (
     <>
@@ -22,6 +30,11 @@ const Page = async () => {
         <AboutInfo {...aboutInfo[0]} />
         <FeaturedServices {...featuredServices[0]} showBorderBottom={false} />
       </div>
+
+      <SeoMatic
+        metaJsonLdContainer={seomatic.metaJsonLdContainer}
+        metaScriptContainer={seomatic.metaScriptContainer}
+      />
     </>
   )
 }

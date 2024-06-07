@@ -1,7 +1,10 @@
+import { seomatic } from "./shared"
+
 export const SINGLE_PROJECT_QUERY = `
   query ProjectsSingle($slug: [String]) {
     projectsEntries(slug: $slug) {
       ... on project_Entry {
+        ${seomatic}
         title
         video
         agencyName
@@ -22,9 +25,11 @@ export const SINGLE_PROJECT_QUERY = `
 
 export const ALL_PROJECTS_QUERY = `
   query AllProjects {
-    projectsEntries {
-      ... on project_Entry {
-        id
+    totalProjects: entryCount(section: "projects")
+    worksEntries {
+      ... on projects_Entry {
+        title
+        ${seomatic}
       }
     }
   }
@@ -34,7 +39,7 @@ export const ALL_PROJECTS_QUERY = `
  * requires $offset Integer param.
  */
 export const PAGINATED_PROJECTS_QUERY = `
-  query PaginatedArticles($offset: Int) {
+  query PaginatedProjects($offset: Int) {
     projectsEntries(orderBy: "postDate desc", offset: $offset, limit: 8) {
       ... on project_Entry {
         title

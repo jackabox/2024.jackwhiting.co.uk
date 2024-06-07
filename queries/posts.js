@@ -1,3 +1,5 @@
+import { seomatic } from "./shared"
+
 export const SINGLE_POST_QUERY = `
   query Article($slug: [String]) {
     articlesEntries(slug: $slug) {
@@ -8,6 +10,7 @@ export const SINGLE_POST_QUERY = `
           title
         }
         dateCreated @formatDateTime (format: "Y/m/d")
+        ${seomatic}
       }
     }
   }
