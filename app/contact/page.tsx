@@ -32,7 +32,7 @@ const Page = async () => {
           title="Email Jack!"
           href={`mailto:${email}`}
           text={email}
-          className="h3 sm:h1 !text-blue"
+          className="h3 sm:h1 !text-blue font-bold"
           color="blue"
         />
 
