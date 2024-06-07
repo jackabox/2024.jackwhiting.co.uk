@@ -1,3 +1,5 @@
+import { seomatic } from "./shared"
+
 export const HOME_QUERY = `
 query HomeQuery {
   homeEntries {
@@ -61,6 +63,7 @@ query HomeQuery {
           }
         }
       }
+      ${seomatic}
     }
   }
 }

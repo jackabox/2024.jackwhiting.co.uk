@@ -31,12 +31,14 @@ const PostsPage = async ({ searchParams }: { searchParams: { page: any } }) => {
         </h1>
       </section>
 
+      {/* Loop around our articles */}
       <section className="container max-w-[768px] space-y-10 md:space-y-14 lg:space-y-20 divide-y-2 divide-grey-500 pb-12">
         {articlesEntries.map((article: any, index: number) => {
           return <ArticleFeaturedCard key={index} {...article} />
         })}
       </section>
 
+      {/* Add in our custom pagination component here, as we need to use client for it. */}
       <Pagination itemsPerPage={itemsPerPage} pageCount={pageCount} />
     </>
   )
