@@ -21,7 +21,7 @@ const Page = async () => {
       </section>
 
       <div className="container">
-        <section className="grid grid-cols-2 gap-48 py-24 lg:py-36">
+        <section className="grid grid-cols-2 gap-48 pb-24 lg:pb-36">
           <Image src="/me.jpg" alt="Picture of Jack" width="800" height="900" />
 
           <div className="pt-6 max-w-[600px]">

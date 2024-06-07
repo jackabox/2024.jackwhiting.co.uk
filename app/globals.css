@@ -106,7 +106,7 @@ strong {
 	}
 
 	pre {
-		@apply bg-grey-500 font-mono text-sm;
+		@apply bg-grey-500 font-mono text-sm overflow-x-auto;
 	}
 }
 
