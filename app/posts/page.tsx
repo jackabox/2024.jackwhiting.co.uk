@@ -23,8 +23,6 @@ const PostsPage = async ({ searchParams }: { searchParams: { page: any } }) => {
   })
   const pageCount = Math.ceil(total / itemsPerPage)
 
-  console.log(articlesEntries)
-
   return (
     <>
       <section className="py-24 lg:pb-48 container">
