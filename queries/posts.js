@@ -15,11 +15,7 @@ export const SINGLE_POST_QUERY = `
 
 export const ALL_POSTS_QUERY = `
   query AllArticles {
-    articlesEntries {
-      ... on article_Entry {
-        id
-      }
-    }
+    totalArticles: entryCount(section: "articles")
   }
 `
 

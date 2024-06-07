@@ -10,7 +10,7 @@ export default function ArticleFeaturedCard({
 	return (
 		<Link
 			href={url}
-			className="block relative group pt-8 lg:pt-16 col-span-12 lg:col-span-4 lg:last:hidden xl:last:block xl:col-span-3"
+			className="block relative group pt-8 lg:pt-16 col-span-12 lg:col-span-3 xl:col-span-3"
 		>
 			<div className="flex flex-col h-full">
 				<p className="mb-4 uppercase font-mono text-semibold tracking-wider small text-black/40">
