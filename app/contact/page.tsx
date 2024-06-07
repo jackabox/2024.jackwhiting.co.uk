@@ -31,9 +31,9 @@ const Page = async () => {
 
         <div className="flex flex-wrap gap-16 mt-8 sm:mt-16">
           <LinkUnderlineStyle
-            title="Link to Jack's Mastadon"
+            title="Link to Jack's Mastodon"
             href="https://mas.to/jackabox"
-            text="Mastadon"
+            text="Mastodon"
             className="h4"
           />
 
