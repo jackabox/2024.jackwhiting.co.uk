@@ -36,23 +36,28 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
       <div className="section container relative grid grid-cols-12 gap-24">
         <div className=" col-span-3">
-          <div className="sticky top-20">
-            <h4 className="font-normal">Table of Contents</h4>
-            <ol className="list-decimal list-inside mt-6 p">
-              {toc.map(({ id, title }) => {
-                return (
-                  <li key={id} className="mb-2 pb-2 border-b-2 border-grey-500">
-                    <a
-                      href={`#${id}`}
-                      className=" w-full hover:text-blue transition-all duration-500"
+          {toc.length > 0 && (
+            <div className="sticky top-20">
+              <h4 className="font-normal">Table of Contents</h4>
+              <ol className="list-decimal list-inside mt-6 p">
+                {toc.map(({ id, title }) => {
+                  return (
+                    <li
+                      key={id}
+                      className="mb-2 pb-2 border-b-2 border-grey-500"
                     >
-                      {title}
-                    </a>
-                  </li>
-                )
-              })}
-            </ol>
-          </div>
+                      <a
+                        href={`#${id}`}
+                        className=" w-full hover:text-blue transition-all duration-500"
+                      >
+                        {title}
+                      </a>
+                    </li>
+                  )
+                })}
+              </ol>
+            </div>
+          )}
         </div>
 
         <div

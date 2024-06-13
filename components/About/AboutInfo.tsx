@@ -13,7 +13,7 @@ const AboutInfo = ({ image, rte, heading }: any) => {
 			<div className="pt-1">
 				<h2 className="mb-6">{heading}</h2>
 				<div
-					className="rte max-w-[568px]"
+					className="rte rte--large max-w-[620px]"
 					dangerouslySetInnerHTML={{ __html: rte }}
 				/>
 			</div>

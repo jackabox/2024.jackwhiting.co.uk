@@ -3,121 +3,128 @@
 @tailwind utilities;
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
-	h1,
-	.h1 {
-		@apply text-black;
-		font-size: clamp(3.75rem, 2.7832rem + 4.2969vw, 7.1875rem);
-	}
+  h1,
+  .h1 {
+    @apply text-black;
+    font-size: clamp(3.75rem, 2.7832rem + 4.2969vw, 7.1875rem);
+  }
 
-	h2,
-	.h2 {
-		@apply text-black;
-		/*		font-size: clamp(1.375rem, 1.2695rem + 0.4688vw, 3rem);*/
-		font-size: 3rem;
-		font-weight: normal;
-	}
+  h2,
+  .h2 {
+    @apply text-black;
+    /*		font-size: clamp(1.375rem, 1.2695rem + 0.4688vw, 3rem);*/
+    font-size: 3rem;
+    font-weight: normal;
+  }
 
-	h3,
-	.h3 {
-		@apply text-black;
-		font-size: clamp(1.375rem, 1.2695rem + 0.4688vw, 1.75rem);
-	}
+  h3,
+  .h3 {
+    @apply text-black;
+    font-size: clamp(1.375rem, 1.2695rem + 0.4688vw, 1.75rem);
+  }
 
-	h4,
-	.h4 {
-		@apply text-black;
-		font-size: clamp(1.125rem, 1.0898rem + 0.1663vw, 1.3rem);
-	}
+  h4,
+  .h4 {
+    @apply text-black;
+    font-size: clamp(1.125rem, 1.0898rem + 0.1663vw, 1.3rem);
+  }
 
-	h5,
-	.h5,
-	.rte h4 {
-		@apply text-black;
-		font-size: clamp(1rem, 0.9648rem + 0.1563vw, 1.125rem);
-		font-weight: 400;
-	}
+  h5,
+  .h5,
+  .rte h4 {
+    @apply text-black;
+    font-size: clamp(1rem, 0.9648rem + 0.1563vw, 1.125rem);
+    font-weight: 400;
+  }
 
-	p,
-	.p,
-	.rte {
-		line-height: 1.6;
-		font-size: clamp(0.9375rem, 0.9023rem + 0.1563vw, 1.0625rem);
-	}
+  p,
+  .p,
+  .rte {
+    line-height: 1.6;
+    font-size: clamp(0.9375rem, 0.9023rem + 0.1563vw, 1.0625rem);
+  }
 
-	.large,
-	.rte--large,
-	.rte--large p,
-	.rte--large li {
-		font-size: clamp(1rem, 0.9648rem + 0.1563vw, 1.25rem);
-	}
+  .large,
+  .rte--large,
+  .rte--large p,
+  .rte--large li {
+    font-size: clamp(1rem, 0.9648rem + 0.1563vw, 1.25rem);
+  }
 
-	.rte--xl p {
-		font-size: clamp(1rem, 0.9648rem + 0.1563vw, 1.125rem);
+  .rte--xl p {
+    font-size: clamp(1rem, 0.9648rem + 0.1563vw, 1.125rem);
 
-		@screen sm {
-			font-size: clamp(1.375rem, 1.2695rem + 0.4688vw, 1.75rem);
-		}
-	}
+    @screen sm {
+      font-size: clamp(1.375rem, 1.2695rem + 0.4688vw, 1.75rem);
+    }
+  }
 
-	.small {
-		font-size: clamp(0.8125rem, 0.7773rem + 0.1563vw, 0.9375rem);
-	}
+  .small {
+    font-size: clamp(0.8125rem, 0.7773rem + 0.1563vw, 0.9375rem);
+  }
 
-	.text-balance {
-		text-wrap: balance;
-	}
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
 b,
 strong {
-	@apply font-semibold;
+  @apply font-semibold;
 }
 
 .rte > * + * {
-	@apply mt-6;
+  @apply mt-6;
 }
 
 .rte > * + h3,
 .rte > * + h4 {
-	@apply mt-6;
+  @apply mt-6;
 }
 
 .rte a {
-	@apply text-blue;
+  @apply text-blue;
 }
 
 .iframe-square iframe {
-	@apply object-cover !w-full !h-full;
+  @apply object-cover !w-full !h-full;
 }
 
 .rte--blog {
-	ul,
-	ol {
-		@apply ml-10;
-		list-style: disc;
+  ul,
+  ol {
+    @apply ml-10;
+    list-style: disc;
 
-		> li {
-			@apply mb-2;
-		}
-	}
+    > li {
+      @apply mb-2;
+    }
+  }
 
-	> * + h1,
-	> * + h2,
-	> * + h3,
-	> * + h4,
-	> * + h5 {
-		@apply pt-12 mt-12 border-t-2 border-grey-500;
-	}
+  > * + h1,
+  > * + h2,
+  > * + h3,
+  > * + h4,
+  > * + h5 {
+    @apply pt-12 mt-12 border-t-2 border-grey-500;
+  }
 
-	pre {
-		@apply bg-grey-500 font-mono text-sm overflow-x-auto;
-	}
+  p > code {
+    font-size: 0.7em;
+    display: inline-block;
+    background-color: #eff1f5;
+    @apply px-1.5 py-1 rounded-sm mx-1;
+  }
+
+  pre {
+    @apply bg-grey-500 font-mono text-sm overflow-x-auto;
+  }
 }
 
 .shiki {
-	@apply p-6;
+  @apply p-6;
 }
