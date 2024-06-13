@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <>
       <section className="container py-24 lg:pb-48 text-center">
-        <p className="mb-8 uppercase font-mono text-semibold tracking-wider  text-black/40">
+        <p className="mb-5 lg:mb-8 uppercase font-mono text-semibold tracking-wider  text-black/40">
           Projects
         </p>
 
@@ -37,13 +37,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </h1>
       </section>
 
-      <div className="py-24 bg-blue">
+      <div className="py-16 lg:py-24 bg-blue">
         <div className="container">
           {video ? <FullVideo url={video} /> : <></>}
         </div>
       </div>
 
-      <div className="container my-24 flex justify-between gap-10">
+      <div className="container mt-16 lg:mt-24 flex flex-wrap lg:flex-nowrap justify-between gap-10">
         <div className="max-w-[768px]">
           <h3 className="font-normal mb-6">Overview</h3>
           <div
@@ -61,7 +61,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           )}
         </div>
 
-        <div className="w-1/3 grid grid-cols-2 gap-20">
+        <div className="mt-10 lg:mt-0 w-full lg:w-1/3 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20">
           <div className="col-span-1">
             <h4 className="font-normal mb-6">Services</h4>
 
