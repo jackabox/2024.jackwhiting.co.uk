@@ -21,7 +21,7 @@ export default function ArticleFeaturedCard({
           {title}
         </h3>
 
-        <p className="mb-10 large">{excerpt}</p>
+        <p className="mb-6 lg:mb-10 large">{excerpt}</p>
 
         <div className="mt-auto">
           <SimpleButton text="Read Article" />

@@ -29,14 +29,14 @@ export default function ProjectRow({
   return (
     <Link
       href={url}
-      className="block mb-6 lg:mb-14 pb-6 lg:pb-14 relative group last:mb-0"
+      className="block mb-8 lg:mb-14 pb-8 lg:pb-14 relative group last:mb-0"
       onMouseEnter={() => handleClick()}
     >
       <p className="uppercase font-mono text-semibold tracking-wider small text-black/40">
         0{id + 1}.
       </p>
 
-      <div className="flex justify-between items-e items-center mt-3">
+      <div className="flex flex-wrap justify-between gap-4 items-center mt-3">
         <div className="flex items-center gap-2">
           <h3 className=" font-normal transition-all duration-300">{title}</h3>
 
@@ -58,7 +58,7 @@ export default function ProjectRow({
           </span>
         </div>
 
-        <div>
+        <div className="w-full md:w-auto">
           <div className="w-auto flex gap-4 flex-wrap">
             {projectType.map((type: any, index: number) => {
               return (

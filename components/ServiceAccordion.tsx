@@ -25,7 +25,7 @@ export default function ServiceAccordion({
   }
 
   return (
-    <div className="block mb-14 pb-14 relative ">
+    <div className="block mb-8 lg:mb-14 pb-8 lg:pb-14 relative ">
       <div className="flex flex-wrap lg:flex-nowrap items-start">
         <button
           type="button"

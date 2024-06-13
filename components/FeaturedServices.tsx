@@ -18,7 +18,7 @@ export default function FeaturedServices({
 
   return (
     <section
-      className={`border-t-2 border-grey-500 pt-24 lg:pt-36 -mt-0.5 ${showBorderBottom ? "border-b-2 pb-24 lg:pb-36" : ""}`}
+      className={`border-t-2 border-grey-500 pt-24 lg:pt-36 -mt-0.5 ${showBorderBottom ? "border-b-2 pb-16 lg:pb-28" : ""}`}
     >
       <h2 className="text-4xl font-normal mb-6">{heading}</h2>
 
@@ -27,7 +27,7 @@ export default function FeaturedServices({
         dangerouslySetInnerHTML={{ __html: summary }}
       />
 
-      <div className="mt-20">
+      <div className="mt-12 lg:mt-20">
         {services.map((service: any, index: number) => {
           return (
             <ServiceAccordion

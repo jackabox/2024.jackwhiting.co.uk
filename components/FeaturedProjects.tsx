@@ -37,7 +37,7 @@ export default function FeaturedProjects({ heading, summary, projects }: any) {
         dangerouslySetInnerHTML={{ __html: summary }}
       />
 
-      <div className="grid grid-cols-6 lg:gap-28 mt-20">
+      <div className="grid grid-cols-6 lg:gap-28 mt-12 lg:mt-20">
         <div className="hidden lg:block lg:col-span-3">
           {projects.map((project: any, index: number) => {
             return (
