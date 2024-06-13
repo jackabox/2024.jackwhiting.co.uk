@@ -10,7 +10,7 @@ export default function FeaturedServices({ heading, summary, articles }: any) {
         dangerouslySetInnerHTML={{ __html: summary }}
       />
 
-      <div className="grid grid-cols-12 gap-10 sm:gap-14 md:gap-20 lg:gap-28 mt-20">
+      <div className="grid grid-cols-1 lg:grid-cols-4 sm:gap-14 md:gap-20 lg:gap-28 mt-20">
         {articles.map((article: any, index: number) => {
           return <ArticleFeaturedCard key={index} {...article} />
         })}

@@ -35,7 +35,7 @@ export default function Header({ totalProjects }: any) {
       className={`transition-all duration-500 py-16 fixed top-0 left-0 right-0  z-40 ${padding < 4 ? "bg-grey-500/20 backdrop-blur-sm" : ""}`}
       style={{ paddingTop: `${padding}rem`, paddingBottom: `${padding}rem` }}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container flex flex-wrap items-center justify-between">
         <Link
           href="/"
           title="Back to the home page"
@@ -44,7 +44,7 @@ export default function Header({ totalProjects }: any) {
           Jack Whiting
         </Link>
 
-        <nav className="flex gap-12">
+        <nav className="flex gap-8 mt-6 lg:mt-0 lg:gap-12">
           <NavigationItem href="/about" title="About" />
           <NavigationItem href="/projects" title="Projects">
             <pre className="absolute text-sm text-black/30 font-semibold -right-3 -top-2">
