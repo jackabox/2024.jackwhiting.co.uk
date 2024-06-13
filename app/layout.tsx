@@ -1,4 +1,6 @@
 import { NeueHaas } from "@/utils/fonts"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
@@ -38,6 +40,9 @@ export default async function RootLayout({
           {children}
           <Footer {...footer} />
         </main>
+
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
