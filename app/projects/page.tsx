@@ -44,7 +44,7 @@ const Page = async ({ searchParams }: { searchParams: { page: any } }) => {
       </section>
 
       <section className="container">
-        <div className="grid grid-cols-2 gap-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
           {projectsEntries.map((article: any, index: number) => {
             return <ProjectFullRow key={index} {...article} />
           })}

@@ -19,7 +19,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <>
       <section className="container py-24 lg:pb-48 text-center">
-        <p className="mb-8 uppercase font-mono text-semibold tracking-wider  text-black/40">
+        <p className="mb-5 lg:mb-8 uppercase font-mono text-semibold tracking-wider  text-black/40">
           {dateCreated}
         </p>
 
@@ -27,15 +27,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
           {title}
         </h1>
 
-        <div className="mt-10 flex gap-4 flex-wrap justify-center">
+        <div className="mt-6 lg:mt-10 flex gap-4 flex-wrap justify-center">
           {topics.map((topic: any, index: number) => {
             return <Tag key={index} {...topic} />
           })}
         </div>
       </section>
 
-      <div className="section container relative grid grid-cols-12 gap-24">
-        <div className=" col-span-3">
+      <div className="section container relative grid grid-cols-6 lg:grid-cols-12 gap-16 lg:gap-24">
+        <div className="col-span-full lg:col-span-3">
           {toc.length > 0 && (
             <div className="sticky top-20">
               <h4 className="font-normal">Table of Contents</h4>
@@ -61,7 +61,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
 
         <div
-          className="col-span-6 col-start-4 rte rte--large rte--blog"
+          className="col-span-6 lg:col-start-4 rte rte--large rte--blog"
           dangerouslySetInnerHTML={{
             __html: content,
           }}
