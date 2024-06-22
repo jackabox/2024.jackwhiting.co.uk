@@ -12,6 +12,12 @@ export const SINGLE_PROJECT_QUERY = `
         date
         overview
         websiteUrl
+        heroImage {
+          url
+          width
+          height
+          alt
+        }
         projectServices {
           title
         }
