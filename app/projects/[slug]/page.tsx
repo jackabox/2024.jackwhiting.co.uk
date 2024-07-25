@@ -1,15 +1,9 @@
+import { SeoMatic, getMetadata } from "next-seomatic"
+import Image from "next/image"
 import { getApiQuery } from "@/utils/getApiQuery.js"
 import { SINGLE_PROJECT_QUERY } from "@/queries/projects"
 import FullVideo from "@/components/Projects/FullVideo"
 import SimpleButton from "@/components/SimpleButton"
-import Link from "next/link"
-import Image from "next/image"
-
-async function getData(params: any) {
-  const { projectsEntries } = await getApiQuery(SINGLE_PROJECT_QUERY, params)
-
-  return projectsEntries[0]
-}
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const {
@@ -23,6 +17,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     websiteUrl,
     date,
     overview,
+    seomatic,
   } = await getData({
     slug: params.slug,
   })
@@ -41,7 +36,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
       <div className="py-16 lg:py-24 bg-blue">
         <div className="container">
-          {heroImage ? (
+          {heroImage && heroImage.length > 0 ? (
             <Image
               src={heroImage[0].url}
               alt={heroImage[0].alt}
@@ -149,6 +144,30 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
+
+      <SeoMatic
+        metaJsonLdContainer={seomatic.metaJsonLdContainer}
+        metaScriptContainer={seomatic.metaScriptContainer}
+      />
     </>
   )
+}
+
+async function getData(params: any) {
+  const { projectsEntries } = await getApiQuery(SINGLE_PROJECT_QUERY, params)
+
+  return projectsEntries[0]
+}
+
+// Meta Data
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}) {
+  const { seomatic } = await getData({
+    slug: params.slug,
+  })
+
+  return getMetadata(seomatic)
 }
